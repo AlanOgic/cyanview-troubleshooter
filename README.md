@@ -2,8 +2,6 @@
 
 An interactive flowchart-based troubleshooting tool for Cyanview RCP and RIO devices. Helps broadcast engineers and technicians quickly diagnose and resolve network connectivity issues during setup and production.
 
-![Cyanview Troubleshooter](docs/screenshot.png)
-
 ## Features
 
 ### 🔧 Network Diagnostics
