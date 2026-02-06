@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-02-06
+
+### Changed
+- Split monolithic `App.jsx` into modular files: `data/flowchartData.js`, `data/quickReference.js`, `data/constants.js`
+- Fixed icon mappings: `shield` now uses Shield icon, `cloud` uses Cloud, `camera` uses Camera, `search` uses Search
+
+### Fixed
+- Orphaned `remi_manual_ip` node now reachable from `remi_lan_discovery_fix`
+- `remi_rio_live_limit` dead-end now links back to entry for continued troubleshooting
+- Disabled production sourcemaps for security
+
+### Added
+- Docker support with multi-stage Dockerfile and docker-compose.yml
+- Docker deployment instructions in README
+
 ## [1.0.0] - 2025-02-03
 
 ### Added

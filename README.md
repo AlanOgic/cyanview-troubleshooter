@@ -42,7 +42,7 @@ An interactive flowchart-based troubleshooting tool for Cyanview RCP and RIO dev
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -69,20 +69,38 @@ npm run build
 
 Output will be in the `dist/` directory.
 
+### Docker Deployment
+
+```bash
+# Build and run with Docker Compose
+docker compose up -d --build
+
+# Or build manually
+docker build -t cyanview-troubleshooter .
+docker run -d -p 8080:80 cyanview-troubleshooter
+```
+
+The app will be available at `http://localhost:8080`
+
 ## Project Structure
 
 ```
 cyanview-troubleshooter/
 ├── src/
-│   ├── App.jsx          # Main troubleshooter component
-│   ├── main.jsx         # React entry point
-│   └── index.css        # Tailwind imports
+│   ├── App.jsx              # Main troubleshooter component
+│   ├── main.jsx             # React entry point
+│   ├── index.css            # Tailwind imports
+│   └── data/
+│       ├── flowchartData.js # Decision tree nodes (58 nodes)
+│       ├── quickReference.js# Sidebar reference data
+│       └── constants.js     # Icon map and severity colors
 ├── public/
-│   └── favicon.svg      # Cyanview icon
+│   └── favicon.svg          # Cyanview icon
 ├── docs/
-│   ├── screenshot.png   # App screenshot
-│   └── flowchart.md     # Decision tree documentation
-├── index.html           # HTML entry point
+│   └── flowchart.md         # Decision tree documentation
+├── Dockerfile               # Multi-stage Docker build
+├── docker-compose.yml       # Docker Compose config
+├── index.html               # HTML entry point
 ├── package.json
 ├── tailwind.config.js
 ├── vite.config.js
@@ -127,7 +145,7 @@ The troubleshooter uses a state-machine pattern with three node types:
 
 ### Adding New Diagnostic Nodes
 
-Edit `src/App.jsx` and add nodes to the `flowchartData` object:
+Edit `src/data/flowchartData.js` and add nodes to the `flowchartData` object:
 
 ```javascript
 my_new_node: {
@@ -196,4 +214,3 @@ For Cyanview product support:
 ---
 
 Made with ❤️ for the broadcast community by [Cyanview](https://www.cyanview.com)
-# cyanview-troubleshooter
