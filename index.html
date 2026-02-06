@@ -20,7 +20,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <canvas id="geoCanvas"></canvas>
     <div id="root"></div>
+    <script src="./geometric-bg.js"></script>
+    <script>
+      new GeometricBackground('geoCanvas', {
+        shapeCount: 20,
+        letterMultiplier: 3,
+        formationYPosition: 0.15,
+        formationInterval: 60000,
+        drawBackground: true,
+        background: { color1: '#003366', color2: '#0077b6' }
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

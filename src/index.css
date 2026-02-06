@@ -26,6 +26,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Geometric canvas background */
+#geoCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
 /* Selection color */
 ::selection {
   background: rgba(6, 182, 212, 0.3);

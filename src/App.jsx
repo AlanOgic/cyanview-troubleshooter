@@ -47,17 +47,7 @@ export default function CyanviewTroubleshooter() {
   const severity = node.severity ? severityColors[node.severity] : severityColors.info;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans relative overflow-hidden">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `linear-gradient(rgba(6, 182, 212, 0.3) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(6, 182, 212, 0.3) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
-
-      {/* Gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+    <div className="min-h-screen text-slate-100 font-sans relative">
 
       {/* Header */}
       <header className="relative border-b border-slate-800/50 bg-slate-900/50 backdrop-blur-xl">
@@ -95,7 +85,7 @@ export default function CyanviewTroubleshooter() {
           <div className={`flex-1 transition-all duration-300 ${showReference ? 'pr-0' : ''}`}>
 
             {/* Progress indicator */}
-            <div className="mb-6 flex items-center gap-2 text-sm">
+            <div className="mb-12 flex items-center gap-2 text-sm">
               <span className="text-slate-500">Step {history.length + 1}</span>
               <div className="flex-1 h-1 bg-slate-800 rounded-full overflow-hidden">
                 <div
